@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ss5_Task1_thucHanhMang</title>
+    <style>
+        body {padding-top:50px; padding-left:50px}
+    </style>
+</head>
+<body>
+    <input type = 'text' id = 'txtValue' value = 'Add the elements here' onfocus="this.value=''"></input>
+    <input type = 'button' id = 'btnAdd' value = 'Add' onclick = 'add_element_to_array();'></input>
+    <input type = 'button' id = 'btnDisplay' value = 'Display' onclick = 'display_array();'></input>
+    <div id = 'result'></div>
+</body>
+<script>
+    var x = 0;
+    var array = [];
+    function add_element_to_array() {
+       array [x] = document.getElementById('txtValue').value;
+       // alert ('The element: ' + array[x] + ' added in the array at index position ' + x);
+       x++;
+       document.getElementById('txtValue').value = '';
+    }
+    function display_array () {
+        let e = '<hr/> The array elements are: <br/>';
+        for (i = 0; i < array.length; i++){
+            e += array[i] + '<br/>';
+        }
+        document.getElementById('result').innerHTML = e;
+        // document.write(e);
+    }
+</script>
+</html>
